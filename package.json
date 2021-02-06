@@ -6,14 +6,6 @@
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.5.0",
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.6.3",
-    "@types/jest": "26.0.20",
-    "@types/node": "14.14.25",
-    "@types/react": "^17.0.1",
-    "@types/react-dom": "17.0.0",
-    "@types/react-redux": "^7.1.16",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -25,7 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint './src/**/*.{ts,tsx}'"
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "size": "npm run build && size-limit"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,6 +36,15 @@
     ]
   },
   "devDependencies": {
+    "@size-limit/preset-app": "^4.9.2",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.6.3",
+    "@types/jest": "26.0.20",
+    "@types/node": "14.14.25",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "17.0.0",
+    "@types/react-redux": "^7.1.16",
     "@types/material-ui": "^0.21.8",
     "@typescript-eslint/eslint-plugin": "^4.14.2",
     "@typescript-eslint/parser": "^4.14.2",
@@ -50,6 +52,12 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-prettier": "^3.3.1",
-    "prettier": "^2.2.1"
-  }
+    "prettier": "^2.2.1",
+    "size-limit": "^4.9.2"
+  },
+  "size-limit": [
+    {
+      "path": "build/static/**/*.{js,css,svg,woff,woff2,png,ttf,html}"
+    }
+  ]
 }
